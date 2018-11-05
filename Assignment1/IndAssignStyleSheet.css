@@ -1,0 +1,68 @@
+body{
+    background-image:url("DNAgif.gif");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+header{
+    display:flex, inline-block;
+    background-color:rgba(245, 245, 245, 0.384);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align:center;
+    border-bottom: solid;
+    border-bottom-width: 10px;
+    border-bottom-color:gray;
+    border-bottom-style:ridge;
+}
+
+nav a{
+    background-color:rgba(0, 4, 8, 0.596);
+    border:solid;
+    color:white;
+    align-content:center;
+}
+
+.Div{
+    display: flex;
+    flex-direction: row;
+}
+.firstSection{
+    width: 50%;
+    align-content:center;
+    text-align:center;
+    background-color: rgba(12, 138, 255, 0.637);
+    color: white;
+    border-right: 3px ridge gray;
+}
+
+.firstAside{
+    width:50%;
+    align-content:center;
+    text-align:center;
+    background-color: rgba(12, 138, 255, 0.637);
+    color: white;
+}
+
+#moreInfoDiv{
+    display: flex;
+    background-color:rgba(12, 138, 255, 0.637);
+    border: 3px ridge gray;
+}
+
+h2{
+    text-align: center;
+}
+
+em{
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: underline;
+}
+
+.Art{
+    align-content:center;
+    background-color: rgba(118, 20, 255, 0.664);
+    text-align:center;
+    border: 3px ridge gray;
+    color:white;
+}
