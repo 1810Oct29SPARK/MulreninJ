@@ -1,7 +1,6 @@
 body{
     background-image:url("DNAgif.gif");
     background-size:cover;
-    background-repeat:no-repeat;
 }
 
 header{
@@ -19,13 +18,13 @@ nav a{
     background-color:rgba(0, 4, 8, 0.596);
     border:solid;
     color:white;
-    align-content:center;
 }
 
 .Div{
     display: flex;
     flex-direction: row;
 }
+
 .firstSection{
     width: 50%;
     align-content:center;
