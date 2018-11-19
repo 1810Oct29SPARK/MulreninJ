@@ -6,16 +6,16 @@ public class GroupWork{
 		System.out.println(factorial(1));
 		System.out.println(factorial(5));
 	}
-	public static int sum;
+	public static int output;
 	public static int factorial(int factorialNum){
+		output = 1;
 		if(factorialNum == 0 || factorialNum == 1){
-			sum = 1;
-			return sum;
+			return output;
 		}else{
 			for(int i = factorialNum; i > 1; i--){
-				sum = sum * i;
+				output = output * i;
 			}
-			return sum;
+			return output;
 		}
 	}
 }

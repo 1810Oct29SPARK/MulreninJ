@@ -1,0 +1,100 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(Apple_Chancery.ttf);
+}
+body{
+    margin-left:100px;
+    margin-right:100px;
+    background-color:rgb(119, 101, 42);
+}
+.logoAndNav{
+    background-color:black;
+    display:flex;
+    flex-direction:row;
+    border-bottom:10px ridge gray;
+}
+
+.logoHeader{
+    display:flex;
+    width:20%;
+}
+.information{
+    text-align:right;
+    color:rgb(180, 180, 7);
+    width:100%;
+    background-image:url(fancyBackground.jpg);
+    background-size:cover;
+}
+.navList{
+    float:left;
+}
+
+.navBarUnList{
+    list-style-type:none;
+    display:inline-block;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+
+nav{
+    text-align:center;
+    /*padding:50px;
+    margin:20px;*/
+    float:left;
+}
+a:hover{
+    color:darkgrey;
+}
+
+nav a{
+    display: block;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:rgb(180, 180, 7);
+    text-decoration:none;
+    font-size:18px;
+    padding:20px;
+}
+
+#homePageFoodPics{
+    display:flex;
+    flex-direction:row;
+}
+
+#homePageFoodPics img{
+    width:33.333%;
+    height: 50vh;
+}
+
+.homePageSection{
+    background-color:black;
+    border-top:10px ridge gray;
+    color:white;
+    text-align:center;
+    margin:0;
+    padding:0;
+    font-family: myFirstFont;
+}
+
+#ourStoryHeader{
+    margin:0;
+}
+
+em{
+    text-decoration:underline;
+}
+
+#loginPageBody{
+    background-image:url(LoginPageBackground.jpg);
+    display:flex;
+    flex-direction:row;
+    color: white;
+    font-family:MyFirstFont;
+    font-weight:bold;
+}
+
+.loginPageSections{
+    width:50%; 
+    border: 3px solid gray;
+    padding-left:5%;
+}
