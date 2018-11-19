@@ -6,12 +6,12 @@
     <title>JM Steakhouse</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="SparkProject.css" />
-    <script src="main.js"></script>
+    <script src="SparkProjectJS.js"></script>
 </head>
 <body>
     <div class="logoAndNav">
         <header class="logoHeader">
-            <a href="RestaurantHomePage.html"><img src="Logo.png" style="height:155px;"></a>
+            <a href="RestaurantHomePage.html"><img src="Logo.png" style="display:flex; height:100%; width:100%;"></a>
         </header>
         <div class="information">
             <section>
@@ -19,9 +19,10 @@
 Tampa | (586)337-6187 | Sun-Thu: 4pm-10pm Fri-Sat: 4pm-12pm
                 </pre>
             </section>
-            <br>
-            <br>
-        <ul>
+            <p>
+                <img src="" name="weatherImage"> The temperature is <span id="temp"></span>. Our patio is <span id="patio"></span>.
+            </p>
+        <ul class="navBarUnList">
         <nav>
             <li class="navList"><a href="Menu.html">Menu</a></li>
             <li class="navList"><a href="Login.html">Login</a></li>
@@ -32,6 +33,20 @@ Tampa | (586)337-6187 | Sun-Thu: 4pm-10pm Fri-Sat: 4pm-12pm
         </ul>
         </nav>
         </div>
+    </div>
+    <div id="coupGenHeader">
+    <h2>Welcome To The Coupon Generator</h2><br>
+    <h4>Choose A Number 1-100 and Save!</h4><br>
+    <h6>LIMIT 1 PER TABLE PER DAY</h6>
+    </div>
+    <div id="couponGenerator">
+        <h4>Your Number:</h4>
+        <p id="errorMessage"></p>
+        <input type="number" value="1" id="couponNum" min="1" max="100" style="width:50px;">
+        <br>
+        <button id="generateCoup" onclick="generateACoupon();">Show Me My Coupon!</button>
+        <br>
+        <img src="blank.jpg" name="generateImage">
     </div>
     </body>
 </html>

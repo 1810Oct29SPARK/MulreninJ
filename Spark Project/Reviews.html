@@ -6,12 +6,12 @@
     <title>JM Steakhouse</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="SparkProject.css" />
-    <script src="main.js"></script>
+    <script src="SparkProjectJS.js"></script>
 </head>
 <body>
     <div class="logoAndNav">
         <header class="logoHeader">
-            <a href="RestaurantHomePage.html"><img src="Logo.png" style="height:155px;"></a>
+            <a href="RestaurantHomePage.html"><img src="Logo.png" style="display:flex; height:100%; width:100%;"></a>
         </header>
         <div class="information">
             <section>
@@ -19,9 +19,10 @@
 Tampa | (586)337-6187 | Sun-Thu: 4pm-10pm Fri-Sat: 4pm-12pm
                 </pre>
             </section>
-            <br>
-            <br>
-        <ul>
+            <p>
+                <img src="" name="weatherImage"> The temperature is <span id="temp"></span>. Our patio is <span id="patio"></span>.
+            </p>
+        <ul class="navBarUnList">
         <nav>
             <li class="navList"><a href="Menu.html">Menu</a></li>
             <li class="navList"><a href="Login.html">Login</a></li>
@@ -32,6 +33,42 @@ Tampa | (586)337-6187 | Sun-Thu: 4pm-10pm Fri-Sat: 4pm-12pm
         </ul>
         </nav>
         </div>
+    </div>
+    <div class="submitReview">
+    <h2 class="fancyPageHeader" style="color:white;">Reviews</h2>
+    <input type="text" id="reviewFirst" placeholder="First Name">
+    <input type="text" id="reviewLast" placeholder="Last Name"><br>
+    Review<br>
+    <textarea id="textBox" style="width:800px; height:200px; opacity: 50%; text-align:top;"></textarea>
+    </div>
+    <div class="submitReview">
+    <h2>Previous Reviews</h2>
+    <p id="submittedReview"></p>
+    <p>
+        Susan Smith
+    </p>
+    <p>
+        Every time my wife and I dine here we are treated like royalty. The only thing better than the amazing food, is the outpouring of hospitality. The best compliment I can give, is we keep coming back! Jorge the Operating Partner is always inviting and a joy to be around. The staff is welcoming and kind. Love this place!
+    </p>
+    <p>
+        Jeremy Byers
+    </p>
+    <p>
+        Food and service was impeccable. Steaks were cooked perfectly, sides were amazing and drinks were delicious. Celebrated Father's Day and our daughters 21st birthday on Sunday and everything was superb :)
+    </p>
+    <p>
+        Valencia Robinson
+    </p>
+    <p>
+        Brought my husband here for his birthday. They had a card waiting for him on the table when we got there in the customer service during the meal was amazing. The food was cooked perfectly and the atmosphere was very enjoyable. I'd like to thank JM's for making my husband's birthday dinner outstanding! Have you have a special occasion you should bring your loved one or friend here.
+    </p>
+    <p>
+        Alex Rite
+    </p>
+    <p>
+        Went there for dinner after arriving to the hotel and we each ordered a steak. I had the filet and my boyfriend had the New York strip. I can honesty say that this was the best steak I have ever had!
+And the mashed potatoes were really good too. This place deserves more than 5 stars. Yes it is expensive but you get what you pay for!
+    </p>
     </div>
     </body>
 </html>

@@ -6,12 +6,12 @@
     <title>JM Steakhouse</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="SparkProject.css" />
-    <script src="main.js"></script>
+    <script src="SparkProjectJS.js"></script>
 </head>
 <body>
     <div class="logoAndNav">
         <header class="logoHeader">
-            <a href="RestaurantHomePage.html"><img src="Logo.png" style="height:155px;"></a>
+            <a href="RestaurantHomePage.html"><img src="Logo.png" style="display:flex; height:100%; width:100%;"></a>
         </header>
         <div class="information">
             <section>
@@ -19,9 +19,10 @@
 Tampa | (586)337-6187 | Sun-Thu: 4pm-10pm Fri-Sat: 4pm-12pm
                 </pre>
             </section>
-            <br>
-            <br>
-        <ul>
+            <p>
+                <img src="" name="weatherImage"> The temperature is <span id="temp"></span>. Our patio is <span id="patio"></span>.
+            </p>
+        <ul class="navBarUnList">
         <nav>
             <li class="navList"><a href="Menu.html">Menu</a></li>
             <li class="navList"><a href="Login.html">Login</a></li>
@@ -33,5 +34,197 @@ Tampa | (586)337-6187 | Sun-Thu: 4pm-10pm Fri-Sat: 4pm-12pm
         </nav>
         </div>
     </div>
+    <div class="menuDiv" style="font-family:myFirstFont;">
+            <fieldset class = "menuSection">
+                <legend class = "menuLegend">
+                    <h2>Appetizers</h2>
+                </legend>
+            <h4>Beef Carpaccio</h4>
+            <p>
+                Thin slices of premium filet mignon 
+                topped with a delicate layer of lemon, 
+                olive oil, white truffle, and an arugula 
+                salad.
+            </p>
+            <span><p class="prices" id="bcPrice">16</p><input type="number" id="bcNum" style="width:30px;" value=0></span>
+            <br>
+            <h4>Fried Calamari</h4>
+            <p>
+                Lightly breaded, fresh caught Mediterranean squid. 
+                Served with a side of in-house spicy marinara.
+            </p>
+            <span><p class="prices" id="fcPrice">13</p><input type="number" id="fcNum" style="width:30px;" value=0></span>
+            <br>
+            <h4>Fried Tomato and Mozzarella Bruschetta</h4>
+            <p>
+                Ripe tomatoes, coated in almond flour and fried 
+                in olive oil with buffalo mozzarella on top of 
+                crisp house-made french bread.
+            </p>
+            <span><p class="prices" id="ftmbPrice">10</p><input type="number" id="ftmbNum" style="width:30px;" value=0></span>
+            <br>
+            <h4>Lump Crab Cakes</h4>
+            <p>
+                Generous portion of the finest blue crab meat 
+                mixed with 10 spices topped with our own mustard 
+                butter cream sauce.
+            </p>
+            <span><p class="prices" id="lccPrice">16</p><input type="number" id="lccNum" style="width:30px;" value=0></span>
+            <br>
+            </fieldset>
+        </div>
+        <div class="menuDiv" style="font-family:myFirstFont;">
+            <fieldset class="menuSection">
+                <legend>
+                    <h2>Entrees</h2>
+                </legend>
+            <h4>Flaky Chilean Sea Bass</h4>
+            <p>
+                12 oz buttery Chilean sea bass filet on a bed of 
+                rice pilaf primavera.
+            </p>
+            <span><p class="prices" id="fcsbPrice">32</p><input type="number" id="fcsbNum" style="width:30px;" value=0></span>
+            <br>
+            <h4>Grilled Jake's Lamb Chops</h4>
+            <p>
+                Thick lamb chops marinated in our house blend 
+                of spices for 24 hours. Served with a side of 
+                Yukon gold loaded mashed potatoes and honey carrots. 
+            </p>
+            <span><p class="prices" id="gjlcPrice">30</p><input type="number" id="gjlcNum" style="width:30px;" value=0></span><br>
+            <h4>Pan Seared Maine Scallops</h4>
+            <p>
+                Pieces of jumbo Maine scallops perfectly seared in 
+                garlic butter. Served along side fresh brussel sprouts 
+                coated in a creamy lemon sauce.
+            </p>
+            <span><p class="prices" id="psmsPrice">32</p><input type="number" id="psmsNum" style="width:30px;" value=0></span><br>
+            <h4>Veal Saltimbocca</h4>
+            <p>
+                Thin strips of veal coated with a thick layer of 
+                bread crumbs and fried. Topped with aged prosciutto 
+                and a melty Fontina cheese. Served with a side of 
+                chunky pasta bolognese.
+            </p>
+            <span><p class="prices" id="vsPrice">24</p><input type="number" id="vsNum" style="width:30px;" value=0></span><br>
+            </fieldset>
+            </div>
+            <div class="menuDiv" style="font-family:myFirstFont;">
+                <fieldset class="menuSection">
+                    <legend>
+                        <h2>45 Day Dry-Aged Steaks</h2>
+                    </legend>
+                    <h4>10 oz Strip Sirloin</h4>
+                    <span><p class="prices" id="ss10Price">20</p><input type="number" id="ss10Num" style="width:30px;" value=0></span><br>
+                    <h4>16 oz Strip Sirloin</h4><input type="number" id="ss16Num" style="width:30px;" value=0>
+                    <p class="prices" id="ss16Price">30</p><br>
+                    <h4>6 oz Petite Filet</h4><input type="number" id="pf6Num" style="width:30px;" value=0>
+                    <p class="prices" id="pf6Price">30</p><br>
+                    <h4>8 oz Filet Mignon</h4><input type="number" id="fm8Num" style="width:30px;" value=0>
+                    <p class="prices" id="fm8Price">35</p><br>
+                    <h4>12 oz Filet Mignon</h4><input type="number" id="fm12Num" style="width:30px;" value=0>
+                    <p class="prices" id="fm12Price">40</p><br>
+                    <h4>24 oz Chateaubriand for Two</h4><input type="number" id="cb24Num" style="width:30px;" value=0>
+                    <p class="prices" id="cb24Price">65</p><br>
+                    <h4>10 oz Delmonico</h4><input type="number" id="del10Num" style="width:30px;" value=0>
+                    <p class="prices" id="del10Price">32</p><br>
+                    <h4>18 oz Delmonico</h4><input type="number" id="del18Num" style="width:30px;" value=0>
+                    <p class="prices" id="del18Price">48</p><br>
+                    <h4>24 oz Porterhouse</h4><input type="number" id="ph24Num" style="width:30px;" value=0>
+                    <p class="prices" id="ph24Price">45</p><br>
+                    <h4>36 oz Porterhouse</h4><input type="number" id="ph36Num" style="width:30px;" value=0>
+                    <p class="prices" id="ph36Price">60</p><br>
+                    <h4>24 oz T-bone</h4><input type="number" id="tb24Num" style="width:30px;" value=0>
+                    <p class="prices" id="tb24Price">42</p><br>
+                    <h4>36 oz T-bone</h4><input type="number" id="tb36Num" style="width:30px;" value=0>
+                    <p class="prices" id="tb36Price">56</p><br>
+                    <h4>16 oz Ribeye</h4><input type="number" id="rib16Num" style="width:30px;" value=0>
+                    <p class="prices" id="rib16Price">36</p><br>
+                    <h4>48 oz Tomahawk</h4><input type="number" id="th48Num" style="width:30px;" value=0>
+                    <p class="prices" id="th48Price">75</p><br>
+                </fieldset>
+            </div>
+        <div class="menuDiv" style="font-family:myFirstFont;">
+            <fieldset class="menuSection">
+                <legend>
+                    <h2>Desserts</h2>
+                </legend>
+                <h4>Strawberry Infused Creme Brulee</h4>
+                <p>
+                    Creamy custard infused with a rich strawberry 
+                    puree topped with a layer of torched cane sugar.
+                </p>
+                <span><p class="prices" id="sicbPrice">12</p><input type="number" id="sicbNum" style="width:30px;" value=0></span><br>
+                <h4>Double-Double Chocolate Cake</h4>
+                <p>
+                    A perfect mixture of milk and dark chocolate cake 
+                    double stuffed with a velvety chocolate ganache and 
+                    coated with a white and dark chocolate tuxedo frosting.
+                </p>
+                <span><p class="prices" id="ddccPrice">14</p><input type="number" id="ddccNum" style="width:30px;" value=0></span><br>
+                <h4>Key Lime Pie</h4>
+                <p>
+                    Perfectly tart key lime filling on top of a 
+                    buttery crust.
+                </p>
+                <span><p class="prices" id="klpPrice">10</p><input type="number" id="klpNum" style="width:30px;" value=0></span><br>
+                <h4>Tropical Sorbet</h4>
+                <p>
+                    Scoops of hand-made icy sorbet. Choose up to 
+                    3 flavors: Guava, Pineapple, Banana, Orange, 
+                    Lemon, or Grapefruit.
+                </p>
+                <span><p class="prices" id="tropsPrice">7</p><input type="number" id="tropsNum" style="width:30px;" value=0></span><br>
+                </fieldset>
+            </div>
+            <div class="menuSection" style="font-family:myFirstFont;" value=0>
+            <fieldset class="menuSection">
+                <legend>
+                    <h2>Cocktail Menu</h2>
+                </legend>
+                <h4>Angry Dragon</h4>
+                <p>
+                    Bacardi Dragon Berry Rum mixed with a strawberry puree, mint, 
+                    and fresh squeezed lime juice.
+                </p>
+                <span><p class="prices" id="aaPrice">11</p><input type="number" id="aaNum" style="width:30px;" value=0></span><br>
+                <h4>Presidente Margarita</h4>
+                <p>
+                    Patron Silver Tequila, fresh squeezed lime juice, Grand Marnier. 
+                    On the rocks.
+                </p>
+                <span><p class="prices" id="pmPrice">16</p><input type="number" id="pmNum" style="width:30px;" value=0></span><br>
+                <h4>Old Fashioned</h4>
+                <p>
+                    Jim Beam Kentucky Bourbon, splash of bitters, and orange peel.
+                </p>
+                <span><p class="prices" id="ofPrice">12</p><input type="number" id="ofNum" style="width:30px;" value=0></span><br>
+                <h4>Cosmopolitan</h4>
+                <p>
+                    Ciroc Citron Vodka, Cointreau liqueur, fresh squeezed lime juice, 
+                    cranberry juice, garnished with lemon and lime peels.
+                </p>
+                <span><p class="prices" id="cosmoPrice">13</p><input type="number" id="cosmoNum" style="width:30px;" value=0></span><br>
+                <h4>The Gin French</h4>
+                <p>
+                    Bombay Sapphire Dry Gin, Champagne, lemon juice.
+                </p>
+                <span><p class="prices" id="tgfPrice">14</p><input type="number" id="tgfNum" style="width:30px;" value=0></span><br>
+                <h4>Stoli Doli Martini</h4>
+                <p>
+                    Pineapple infused Stoli Vodka, blue cheese olives, chilled and served 
+                    straight up.
+                </p>
+                <span><p class="prices" id="sdmPrice">12</p><input type="number" id="sdmNum" style="width:30px;" value=0></span><br>
+            </fieldset>
+        </div>
+        <fieldset>
+        <div id="priceCalculatorDiv">
+        <button id="calcPriceButton" onclick="getElementById('outputPrice').innerHTML = calculatePrice(orderOnline());">Calculate Price</button>
+        <p>Final Price: </p>
+        <p id="outputPrice"></p>
+            <br>
+        </div>
+        </fieldset>
     </body>
 </html>

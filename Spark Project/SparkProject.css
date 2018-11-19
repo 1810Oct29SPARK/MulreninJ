@@ -16,7 +16,7 @@ body{
 
 .logoHeader{
     display:flex;
-    width:20%;
+    width:25%;
 }
 .information{
     text-align:right;
@@ -39,8 +39,6 @@ body{
 
 nav{
     text-align:center;
-    /*padding:50px;
-    margin:20px;*/
     float:left;
 }
 a:hover{
@@ -88,7 +86,7 @@ em{
     background-image:url(LoginPageBackground.jpg);
     display:flex;
     flex-direction:row;
-    color: white;
+    color: rgb(180, 180, 7);
     font-family:MyFirstFont;
     font-weight:bold;
 }
@@ -97,4 +95,82 @@ em{
     width:50%; 
     border: 3px solid gray;
     padding-left:5%;
+}
+
+.fancyPageHeader{
+    text-align:center;
+    background-color:black;
+    height:30px;
+    width:100%;
+    margin:0;
+    border:2px solid gray;
+}
+
+.pageHeaderText{
+    font-size:20px;
+    color:white;
+    margin:0;
+    padding:5px;
+}
+
+#reservationFormSection{
+    height:100%;
+    width:100%;
+    background-color:rgb(206, 206, 112);
+    text-align:center;
+    background-image:url(FancyBackground3.jpg);
+    color:rgb(180, 180, 7);
+}
+
+.reservationForm{
+    text-align:center;
+}
+
+legend{
+    text-align:center;
+}
+
+fieldset p,h4{
+    margin:0;
+    padding:0;
+}
+
+.prices{
+    float:right;
+}
+
+#priceCalculatorDiv{
+    align-content:center;
+    text-align:center;
+}
+
+#couponGenerator{
+    background-image:url(LoginPageBackground.jpg);
+    font-family:MyFirstFont;
+    color: rgb(180, 180, 7);
+    text-align:center;
+}
+
+#coupGenHeader{
+    background-image:url(couponGenBackground.jpg);
+    background-size:100%;
+    color:white;
+    text-align:center;
+    margin:0;
+    padding:0;
+}
+
+.submitReview{
+    background-image:url(FancyBackground3.jpg);
+    color:rgb(180, 180, 7);
+    text-align:center;
+    padding:10px;
+    border-bottom:3px ridge gray;
+    border-right:3px ridge gray;
+    border-left:3px ridge gray;
+}
+
+.tampaInfo{
+    margin:0;
+    padding:0;
 }

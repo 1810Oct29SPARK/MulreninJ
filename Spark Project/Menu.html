@@ -6,21 +6,22 @@
     <title>JM Steakhouse</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="SparkProject.css" />
-    <script src="main.js"></script>
+    <script src="SparkProjectJS.js"></script>
 </head>
 <body>
     <div class="logoAndNav">
         <header class="logoHeader">
-            <a href="RestaurantHomePage.html"><img src="Logo.png" style="height:155px;"></a>
+            <a href="RestaurantHomePage.html"><img src="Logo.png" style="display:flex; height:100%; width:100%;"></a>
         </header>
         <div class="information">
             <section>
                 <pre>
-Tampa | (586)337-6187 | Sun-Thu: 4pm-10pm Fri-Sat: 4pm-12pm
+Tampa | (586)337-6187 | Sun-Thu: 4pm-10pm Fri-Sat: 4pm-12am
                 </pre>
             </section>
-            <br>
-            <br>
+            <p>
+                <img src="" name="weatherImage"> The temperature is <span id="temp"></span>. Our patio is <span id="patio"></span>.
+            </p>
         <ul class="navBarUnList">
         <nav>
             <li class="navList"><a href="Menu.html">Menu</a></li>
@@ -32,6 +33,249 @@ Tampa | (586)337-6187 | Sun-Thu: 4pm-10pm Fri-Sat: 4pm-12pm
         </ul>
         </nav>
         </div>
+    </div>
+    <div class="menuDiv" style="font-family:myFirstFont;">
+        <fieldset class = "menuSection">
+            <legend class = "menuLegend">
+                <h2>Appetizers</h2>
+            </legend>
+        <h4>Beef Carpaccio</h4>
+        <p>
+            Thin slices of premium filet mignon 
+            topped with a delicate layer of lemon, 
+            olive oil, white truffle, and an arugula 
+            salad.
+        </p>
+        <p>
+            16
+        </p>
+        <h4>Fried Calamari</h4>
+        <p>
+            Lightly breaded, fresh caught Mediterranean squid. 
+            Served with a side of in-house spicy marinara.
+        </p>
+        <p>
+            13
+        </p>
+        <h4>Fried Tomato and Mozzarella Bruschetta</h4>
+        <p>
+            Ripe tomatoes, coated in almond flour and fried 
+            in olive oil with buffalo mozzarella on top of 
+            crisp house-made french bread.
+        </p>
+        <p>
+            10
+        </p>
+        <h4>Lump Crab Cakes</h4>
+        <p>
+            Generous portion of the finest blue crab meat 
+            mixed with 10 spices topped with our own mustard 
+            butter cream sauce.
+        </p>
+        <p>
+            16
+        </p>
+        </fieldset>
+    </div>
+    <div class="menuDiv" style="font-family:myFirstFont;">
+        <fieldset class="menuSection">
+            <legend>
+                <h2>Entrees</h2>
+            </legend>
+        <h4>Flaky Chilean Sea Bass</h4>
+        <p>
+            12 oz buttery Chilean sea bass filet on a bed of 
+            rice pilaf primavera.
+        </p>
+        <p>
+            32
+        </p>
+        <h4>Grilled Jake's Lamb Chops</h4>
+        <p>
+            Thick lamb chops marinated in our house blend 
+            of spices for 24 hours. Served with a side of 
+            Yukon gold loaded mashed potatoes and honey carrots. 
+        </p>
+        <p>
+            30
+        </p>
+        <h4>Pan Seared Maine Scallops</h4>
+        <p>
+            Pieces of jumbo Maine scallops perfectly seared in 
+            garlic butter. Served along side fresh brussel sprouts 
+            coated in a creamy lemon sauce.
+        </p>
+        <p>
+            32
+        </p>
+        <h4>Veal Saltimbocca</h4>
+        <p>
+            Thin strips of veal coated with a thick layer of 
+            bread crumbs and fried. Topped with aged prosciutto 
+            and a melty Fontina cheese. Served with a side of 
+            chunky pasta bolognese.
+        </p>
+        <p>
+            24
+        </p>
+        </fieldset>
+        </div>
+        <div class="menuDiv" style="font-family:myFirstFont;">
+            <fieldset class="menuSection">
+                <legend>
+                    <h2>45 Day Dry-Aged Steaks</h2>
+                </legend>
+                <h4>10 oz Strip Sirloin</h4>
+                <p>
+                    22
+                </p>
+                <h4>16 oz Strip Sirloin</h4>
+                <p>
+                    30
+                </p>
+                <h4>6 oz Petite Filet</h4>
+                <p>
+                    30
+                </p>
+                <h4>8 oz Filet Mignon</h4>
+                <p>
+                    35
+                </p>
+                <h4>12 oz Filet Mignon</h4>
+                <p>
+                    40
+                </p>
+                <h4>24 oz Chateaubriand for Two</h4>
+                <p>
+                    65
+                </p>
+                <h4>10 oz Delmonico</h4>
+                <p>
+                    32
+                </p>
+                <h4>18 oz Delmonico</h4>
+                <p>
+                    48
+                </p>
+                <h4>24 oz Porterhouse</h4>
+                <p>
+                    45
+                </p>
+                <h4>36 oz Porterhouse</h4>
+                <p>
+                    60
+                </p>
+                <h4>24 oz T-bone</h4>
+                <p>
+                    42
+                </p>
+                <h4>36 oz T-bone</h4>
+                <p>
+                    56
+                </p>
+                <h4>16 oz Ribeye</h4>
+                <p>
+                    36
+                </p>
+                <h4>48 oz Tomahawk</h4>
+                <p>
+                    75
+                </p>
+            </fieldset>
+        </div>
+    <div class="menuDiv" style="font-family:myFirstFont;">
+        <fieldset class="menuSection">
+            <legend>
+                <h2>Desserts</h2>
+            </legend>
+            <h4>Strawberry Infused Creme Brulee</h4>
+            <p>
+                Creamy custard infused with a rich strawberry 
+                puree topped with a layer of torched cane sugar.
+            </p>
+            <p>
+                12
+            </p>
+            <h4>Double-Double Chocolate Cake</h4>
+            <p>
+                A perfect mixture of milk and dark chocolate cake 
+                double stuffed with a velvety chocolate ganache and 
+                coated with a white and dark chocolate tuxedo frosting.
+            </p>
+            <p>
+                14
+            </p>
+            <h4>Key Lime Pie</h4>
+            <p>
+                Perfectly tart key lime filling on top of a 
+                buttery crust.
+            </p>
+            <p>
+                10
+            </p>
+            <h4>Tropical Sorbet</h4>
+            <p>
+                Scoops of hand-made icy sorbet. Choose up to 
+                3 flavors: Guava, Pineapple, Banana, Orange, 
+                Lemon, or Grapefruit.
+            </p>
+            <p>
+                7
+            </p>
+            </fieldset>
+        </div>
+        <div class="menuSection" style="font-family:myFirstFont;">
+        <fieldset class="menuSection">
+            <legend>
+                <h2>Cocktail Menu</h2>
+            </legend>
+            <h4>Angry Dragon</h4>
+            <p>
+                Bacardi Dragon Berry Rum mixed with a strawberry puree, mint, 
+                and fresh squeezed lime juice.
+            </p>
+            <p>
+                11
+            </p>
+            <h4>Presidente Margarita</h4>
+            <p>
+                Patron Silver Tequila, fresh squeezed lime juice, Grand Marnier. 
+                On the rocks.
+            </p>
+            <p>
+                16
+            </p>
+            <h4>Old Fashioned</h4>
+            <p>
+                Jim Beam Kentucky Bourbon, splash of bitters, and orange peel.
+            </p>
+            <p>
+                12
+            </p>
+            <h4>Cosmopolitan</h4>
+            <p>
+                Ciroc Citron Vodka, Cointreau liqueur, fresh squeezed lime juice, 
+                cranberry juice, garnished with lemon and lime peels.
+            </p>
+            <p>
+                13
+            </p>
+            <h4>The Gin French</h4>
+            <p>
+                Bombay Sapphire Dry Gin, Champagne, lemon juice.
+            </p>
+            <p>
+                14
+            </p>
+            <h4>Stoli Doli Martini</h4>
+            <p>
+                Pineapple infused Stoli Vodka, blue cheese olives, chilled and served 
+                straight up.
+            </p>
+            <p>
+                12
+            </p>
+        </fieldset>
     </div>
     </body>
 </html>
