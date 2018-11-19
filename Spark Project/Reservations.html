@@ -6,12 +6,12 @@
     <title>JM Steakhouse</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="SparkProject.css" />
-    <script src="main.js"></script>
+    <script src="SparkProjectJS.js"></script>
 </head>
 <body>
     <div class="logoAndNav">
         <header class="logoHeader">
-            <a href="RestaurantHomePage.html"><img src="Logo.png" style="height:155px;"></a>
+            <a href="RestaurantHomePage.html"><img src="Logo.png" style="display:flex; height:100%; width:100%;"></a>
         </header>
         <div class="information">
             <section>
@@ -19,9 +19,10 @@
 Tampa | (586)337-6187 | Sun-Thu: 4pm-10pm Fri-Sat: 4pm-12pm
                 </pre>
             </section>
-            <br>
-            <br>
-        <ul>
+            <p>
+                <img src="" name="weatherImage"> The temperature is <span id="temp"></span>. Our patio is <span id="patio"></span>.
+            </p>
+        <ul class="navBarUnList">
         <nav>
             <li class="navList"><a href="Menu.html">Menu</a></li>
             <li class="navList"><a href="Login.html">Login</a></li>
@@ -34,4 +35,58 @@ Tampa | (586)337-6187 | Sun-Thu: 4pm-10pm Fri-Sat: 4pm-12pm
         </div>
     </div>
     </body>
+    <div class="fancyPageHeader">
+        <p class="pageHeaderText">MAKE A RESERVATION</p>
+    </div>
+    <section id="reservationFormSection">
+        <fieldset style="height:100%;">
+            <legend><h4>Details of Your Reservation</h4></legend>
+            <p id="confirmationMessage"></p>
+        <form class="reservationForm" id="reservationFormDetails">
+            <div id="selectADate" style="margin:40px;">
+            <label for="date">SELECT A DATE</label><br>
+            <input type="date" name="date" id="reservationDate">
+            </div>
+            <div id="selectGuests" style="margin:40px;">
+            <label for="selectGuest">HOW MANY GUESTS?</label><br>
+            <select name="selectGuest"id="guestNumber">
+                <option value="2">2 GUESTS</option>
+                <option value="1">1 GUESTS</option>
+                <option value="3">3 GUESTS</option>
+                <option value="4">4 GUESTS</option>
+                <option value="5">5 GUESTS</option>
+                <option value="6">6 GUESTS</option>
+                <option value="7">7 GUESTS</option>
+                <option value="8">8 GUESTS</option>
+                <option value="9">9 GUESTS</option>
+                <option value="10">10 GUESTS</option>
+            </select><br>
+            </div>
+            <div id="selectATime" style="margin:40px;">
+            <label for="time">SELECT A TIME</label><br>
+            <input type="time" name="time" id="resTime">
+            </div>
+        </form>
+        <pre style="margin-top:10px; margin-bottom:0; padding-bottom:0;" id="largerParties">
+For larger parties, please call (586)337-6187
+         </pre>
+        </fieldset>
+        <fieldset style="height:100px">
+            <legend>
+                <h4 id="resBottomSection">Please Provide Your Information</h4>
+            </legend>
+        <form class="reservationForm" id="reservationFormInfo">
+            First Name 
+            <input type="text" name="firstNameText" id="resFirstName">
+            Last Name 
+            <input type="text" name="lastNameText" id="resLastName">
+            Phone Number
+            <input type="text" name="phoneNumber" placeholder="--- --- ----">
+            Email
+            <input type="email" name="reservationEmail" placeholder="name@website.com">
+            <br><br>
+        </form>
+        <button name="submitRes" onclick="reservationConfirmation();" id="reservationButton">Make Your Reservation</button>
+        </fieldset>
+    </section>
 </html>
