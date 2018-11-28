@@ -3,7 +3,7 @@ package com.revature.example;
 public class CodingChallenge {
 
 	public static void main(String[] args) {
-			System.out.println(reverse("reversethisword"));
+			System.out.println(reverse("reverse this word"));
 			System.out.println(reverse("thisworks"));
 	}
 	
