@@ -12,5 +12,6 @@ public interface EmployeeDAO {
 	public void deleteEmployee(int id);
 	public boolean isManagerOf(Employee manager, Employee emp);
 	public void updateEmployee(Employee e, int employeeId);
+	public List<Employee> getAllManagedEmployees(Employee manager);
 	
 }

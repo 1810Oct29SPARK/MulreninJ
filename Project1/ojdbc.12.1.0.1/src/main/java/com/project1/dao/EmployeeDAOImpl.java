@@ -127,4 +127,33 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 			e1.printStackTrace();
 		}
 	}
+	
+	public List<Employee> getAllManagedEmployees(Employee manager){
+		List<Employee> managedEmps = new ArrayList<Employee>();
+		try(Connection con = ConnectionUtil.getConnection(filename)){
+			String sql = "SELECT * FROM EMPLOYEES " + 
+						"WHERE REPORTS_TO = ?";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, manager.getId());
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				int employeeId = rs.getInt("EMPLOYEE_ID");
+				String firstName = rs.getString("FIRST_NAME");
+				String lastName = rs.getString("LAST_NAME");
+				String title = rs.getString("JOB_TITLE");
+				String phoneNumber = rs.getString("PHONE_NUMBER");
+				int age = rs.getInt("AGE");
+				int reportsTo = rs.getInt("REPORTS_TO");
+				String address = rs.getString("ADDRESS");
+				int zipCode = rs.getInt("ZIPCODE");
+				boolean isManager = rs.getBoolean("IS_MANAGER");
+				managedEmps.add(new Employee(employeeId,firstName,lastName,title,phoneNumber,age,reportsTo,address,zipCode,isManager));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		return managedEmps;
+	}
 }

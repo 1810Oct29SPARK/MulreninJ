@@ -1,9 +1,14 @@
 package com.project1.util;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.project1.beans.Employee;
+import com.project1.beans.LoginInfo;
+import com.project1.dao.EmployeeDAO;
 import com.project1.dao.EmployeeDAOImpl;
+import com.project1.dao.LoginInfoDAO;
+import com.project1.dao.LoginInfoDAOImpl;
 import com.project1.dao.ReimbursementDAOImpl;
 
 public class ReimbursementUtil {
@@ -34,4 +39,28 @@ public class ReimbursementUtil {
 		return false;
 	}
 	
+	public boolean isValidUser(String username, String password) {
+		LoginInfoDAO login = new LoginInfoDAOImpl();
+		List<LoginInfo> loginList = new ArrayList<LoginInfo>();
+		loginList = login.getAllLogins();
+		for(LoginInfo l:loginList) {
+			if(l.getUsername() == username && l.getPassword() == password) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean showManagerPage(String username, String password) {
+		LoginInfoDAO login = new LoginInfoDAOImpl();
+		EmployeeDAO e = new EmployeeDAOImpl();
+		if(isValidUser(username, password)) {
+			int empId = login.getEmployeeIdFromUsername(username);
+			Employee emp = e.getEmployeeById(empId);
+			if(emp.isManager()) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

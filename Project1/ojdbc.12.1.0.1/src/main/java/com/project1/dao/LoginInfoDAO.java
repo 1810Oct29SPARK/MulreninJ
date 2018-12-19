@@ -11,4 +11,5 @@ public interface LoginInfoDAO {
 	public void deleteLoginInfoByEmployeeId(int id);
 	public LoginInfo getLoginInfoByEmployeeId(int id);
 	public List<LoginInfo> getAllLogins();
+	public int getEmployeeIdFromUsername(String username);
 }

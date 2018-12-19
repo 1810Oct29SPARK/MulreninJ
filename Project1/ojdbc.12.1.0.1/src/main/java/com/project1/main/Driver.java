@@ -20,9 +20,9 @@ public class Driver {
 		EmployeeDAO e = new EmployeeDAOImpl();
 		LoginInfoDAO login = new LoginInfoDAOImpl();
 		List<LoginInfo> log = login.getAllLogins();
-		for(LoginInfo l:log) {
+		/*for(LoginInfo l:log) {
 			System.out.println(l);
-		}
+		}*/
 		/*List<Employee> emp = e.getAllEmployees();
 		for(Employee employ:emp) {
 			System.out.println(employ);
@@ -30,6 +30,7 @@ public class Driver {
 		//System.out.println(e.getEmployeeById(1));
 		//e.addEmployee("Edward", "Scissorshands", "Cutter", "787-565-3434", 40, 1, "5 Drury Lane", 75757, false);
 		//e.deleteEmployee(22);
+		//login.updateLoginInfo(20,"Myusername", "PASSWORD");
 	}
 	static void init(){
 		try {

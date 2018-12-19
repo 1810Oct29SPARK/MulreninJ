@@ -32,7 +32,20 @@ public class LoginInfoDAOImpl implements LoginInfoDAO{
 	}
 	
 	public void updateLoginInfo(int id, String username, String password) {
-		
+		try(Connection con = ConnectionUtil.getConnection(filename)){
+			String sql = "UPDATE LOGIN_INFO " + 
+						"SET USERNAME = ?, USER_PASSWORD = ? " + 
+						"WHERE EMPLOYEE_ID = ?";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, username);
+			pstmt.setString(2, password);
+			pstmt.setInt(3, id);
+			pstmt.executeUpdate();
+		} catch (SQLException e2) {
+			e2.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 	}
 	
 	public void deleteLoginInfoByEmployeeId(int id) {
@@ -90,5 +103,23 @@ public class LoginInfoDAOImpl implements LoginInfoDAO{
 			e1.printStackTrace();
 		}
 		return usersLogin;
+	}
+	
+	public int getEmployeeIdFromUsername(String username) {
+		try(Connection con = ConnectionUtil.getConnection(filename)){
+			String sql = "SELECT EMPLOYEE_ID FROM LOGIN_INFO " + 
+						"WHERE USERNAME = ?";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				int employeeId = rs.getInt("EMPLOYEE_ID");
+				return employeeId;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		return -1;
 	}
 }
