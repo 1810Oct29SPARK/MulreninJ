@@ -31,7 +31,22 @@ function populateUser(){
 				li.appendChild(document.createTextNode(user.Employees[i].firstName + " " + user.Employees[i].lastName + " - " + user.Employees[i].title));
 				document.getElementById("managedemployees").appendChild(li);
 			}
-			
+			for(let j = 0; j < user.Reimbursements.length; j++){
+				var tr = document.createElement("tr");
+				var tddesc = document.createElement("td");
+				var tdamnt = document.createElement("td");
+				var tdstat = document.createElement("td");
+				var tdres = document.createElement("td");
+				tddesc.appendChild(document.createTextNode(user.Reimbursements[j].reimburseName));
+				tdamnt.appendChild(document.createTextNode(user.Reimbursements[j].amount));
+				tdstat.appendChild(document.createTextNode(user.Reimbursements[j].reimburseStatus));
+				tdres.appendChild(document.createTextNode(user.Reimbursements[j].resolvedBy));
+				tr.appendChild(tddesc);
+				tr.appendChild(tdamnt);
+				tr.appendChild(tdstat);
+				tr.appendChild(tdres);
+				document.getElementById("reimburseTable").appendChild(tr);
+			}
 		}
 	});
 	
