@@ -155,4 +155,24 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 		}
 		return managedEmps;
 	}
+	
+	public int getEmployeeIdFromFirstAndLastName(String first, String last) {
+		int id = 0;
+		try(Connection con = ConnectionUtil.getConnection(filename)){
+			String sql = "SELECT EMPLOYEE_ID FROM EMPLOYEES " + 
+						"WHERE FIRST_NAME = ? AND LAST_NAME = ?";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, first);
+			pstmt.setString(2, last);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				id = rs.getInt("EMPLOYEE_ID");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		return id;
+	}
 }

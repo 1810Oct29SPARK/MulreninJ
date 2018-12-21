@@ -21,7 +21,6 @@ public class EmployeeProfileServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		//check whether a session exists for the incoming request
 		HttpSession session = request.getSession(false);
-		System.out.println(session);
 		if(session != null && session.getAttribute("firstname") != null) {
 			request.getRequestDispatcher("EmployeePage.html").forward(request,response);
 		}else {

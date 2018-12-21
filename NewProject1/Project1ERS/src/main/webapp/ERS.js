@@ -31,6 +31,7 @@ function populateUser(){
 				li.appendChild(document.createTextNode(user.Employees[i].firstName + " " + user.Employees[i].lastName + " - " + user.Employees[i].title));
 				document.getElementById("managedemployees").appendChild(li);
 			}
+			
 		}
 	});
 	

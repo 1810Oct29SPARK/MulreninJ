@@ -71,26 +71,20 @@
                                     <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold" id="firstlasttop"><a href="javascript:void(0);"></a></h2>
                                 </div>
                                 <div class="ml-auto">
-                                    <input type="button" class="btn btn-primary d-none" id="btnLogout" value="Logout" />
+                                    <a href="logout"><input type="button" class="btn btn-primary d-none" id="btnLogout" value="Logout" /></a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-12">
-                                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Manage Reimbursements</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Change Username/Password</a>
-                                    </li>                                    
-                                </ul>
+							<ul class="nav nav-tabs">
+  								<li class="active"><a data-toggle="tab" href="#basicInfo">Basic Info</a></li>
+  								<li><a data-toggle="tab" href="#createReimbursement">Create A Reimbursement</a></li>
+  								<li><a data-toggle="tab" href="#viewReimbursement">View Past Reimbursements</a></li>
+							</ul>
                                 <div class="tab-content ml-1" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                    <div class="tab-pane fade" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
                                         <div class="row">
                                         <br>
                                             <div class="col-sm-3 col-md-2 col-5">
@@ -140,16 +134,48 @@
                                         <hr />
 
                                     </div>
-                                    <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
+                                    <div class="tab-pane fade" id="createReimbursement" role="tabpanel" aria-labelledby="ConnectedServices-tab">
+                                    	<br><br>
+                                    	<div class="reimbursementtab">
                                         <div class="row">
-                                            <div class="col-sm-3 col-md-2 col-5">
-                                                <a href="#">Change Username/Password</a>
-                                            </div>
-                                            <div class="col-md-8 col-6">   
-                                            </div>
+                                        	<div id="reimbursementform">
+                                        	<fieldset>
+                                        	<legend style="text-align:center">
+                                      		<strong>Submit Your Reimbursement Request</strong>
+                                      		</legend>
+                                      		<form action="submittedReimbursement" method="POST" style="align:center">
+                                      		<input name="firstnameinput" placeholder="First Name" style="width:48%" required>
+                                      		<input name="lastnameinput" placeholder="Last Name" style="width:48%" required>
+                                      		<br>
+                                      		<br>
+                                      		<input name="description" placeholder="Description" style="width:70%" required>
+                                      		<input name="amount" placeholder="Amount" style="width:26%" required>
+                                      		<br>
+                                      		<br>
+                                      		<input name="blobfile" placeholder="Absolute File Path of Picture" style="width:96%">
+                                      		<br>
+                                      		<br>
+                                      		<input type="submit" value="Submit" style="width:96%">
+                                      		</form>
+                                      		</fieldset>
+                                      		</div>
+                                        	</div>
                                         </div>
                                         <hr />
                                     </div>
+                                    <div class="tab-pane fade" id="viewReimbursement" role="tabpanel" aria-labelledby="ConnectedServices-tab">
+                                    <div class="reimbursementtab">
+                                    <h2>Past Reimbursement Requests</h2>
+                                    <table>
+                         			<tr>
+                         				<td>Description</td>
+                         				<td>Amount</td>
+                         				<td>Status</td>
+                         				<td>Resolved By</td>
+                         			</tr>
+                                    </table>
+                                    </div>
+                             		</div>
                                 </div>
                             </div>
                         </div>

@@ -13,8 +13,11 @@ import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project1.beans.Employee;
+import com.project1.beans.Reimbursement;
 import com.project1.dao.EmployeeDAO;
 import com.project1.dao.EmployeeDAOImpl;
+import com.project1.dao.ReimbursementDAO;
+import com.project1.dao.ReimbursementDAOImpl;
 
 @WebServlet("/session")
 public class SessionServlet extends HttpServlet {
@@ -43,9 +46,12 @@ public class SessionServlet extends HttpServlet {
 						zipcode, ismanager);
 				//make a call to a different endpoint to get managed employees by manager id.. do this elsewhere
 				EmployeeDAO dao = new EmployeeDAOImpl();
+				ReimbursementDAO reimburse = new ReimbursementDAOImpl();
 				List<Employee> managedEmps = dao.getAllManagedEmployees(e);
+				List<Reimbursement> list = reimburse.getReimbursementsByEmpId(e);
 				//String output = e + " " + managedEmps;
-				response.getWriter().write("{\"User\": " + om.writeValueAsString(e) + ", \"Employees\": " + om.writeValueAsString(managedEmps) + "}");
+				response.getWriter().write("{\"User\": " + om.writeValueAsString(e) + ", \"Employees\": " + om.writeValueAsString(managedEmps) + ", \"Reimbursements\": "
+				+ om.writeValueAsString(list) + "}");
 			} catch (Exception e) {
 				response.getWriter().write("{\"session\":null}");
 			}
