@@ -13,16 +13,21 @@ import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project1.beans.Employee;
+import com.project1.dao.EmployeeDAO;
+import com.project1.dao.EmployeeDAOImpl;
 
 @WebServlet("/session")
-public class SessionServlet extends HttpServlet{
-	
+public class SessionServlet extends HttpServlet {
+
+	private ObjectMapper om = new ObjectMapper();
+
 	@Override
-	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
-		//grab current session, if it exists
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// grab current session, if it exists
 		response.setContentType("application/json");
 		HttpSession session = request.getSession(false);
-		if(session != null) {
+		if (session != null) {
 			try {
 				int empid = Integer.parseInt(session.getAttribute("empId").toString());
 				String title = session.getAttribute("title").toString();
@@ -34,14 +39,17 @@ public class SessionServlet extends HttpServlet{
 				int zipcode = Integer.parseInt(session.getAttribute("zipcode").toString());
 				int reportsto = Integer.parseInt(session.getAttribute("reportsto").toString());
 				int age = Integer.parseInt(session.getAttribute("age").toString());
-				Employee e = new Employee(empid, firstname, lastname, title, phonenumber, age, reportsto, address, zipcode, ismanager);
-				String managedEmps=session.getAttribute("managedEmps").toString();
-				//response.getWriter().write((new ObjectMapper()).writeValueAsString(managedEmps));
-				response.getWriter().write((new ObjectMapper()).writeValueAsString(e));
-			}catch(Exception e) {
+				Employee e = new Employee(empid, firstname, lastname, title, phonenumber, age, reportsto, address,
+						zipcode, ismanager);
+				//make a call to a different endpoint to get managed employees by manager id.. do this elsewhere
+				EmployeeDAO dao = new EmployeeDAOImpl();
+				List<Employee> managedEmps = dao.getAllManagedEmployees(e);
+				//String output = e + " " + managedEmps;
+				response.getWriter().write("{\"User\": " + om.writeValueAsString(e) + ", \"Employees\": " + om.writeValueAsString(managedEmps) + "}");
+			} catch (Exception e) {
 				response.getWriter().write("{\"session\":null}");
 			}
-		}else {
+		} else {
 			response.getWriter().write("{\"session\":null}");
 		}
 	}

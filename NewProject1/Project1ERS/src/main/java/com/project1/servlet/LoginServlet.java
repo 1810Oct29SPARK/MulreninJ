@@ -55,9 +55,9 @@ public class LoginServlet extends HttpServlet{
 			if(!u.isManager()) {
 			resp.sendRedirect("employee_profile");
 			}else {
-				EmployeeDAO dao = new EmployeeDAOImpl();
+				/*EmployeeDAO dao = new EmployeeDAOImpl();
 				List<Employee> managedEmps = dao.getAllManagedEmployees(u);
-				session.setAttribute("managedEmps", managedEmps);
+				session.setAttribute("managedEmps", managedEmps);*/
 				resp.sendRedirect("manager_profile");
 			}
 		}else {

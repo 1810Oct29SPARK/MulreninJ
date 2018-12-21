@@ -77,20 +77,85 @@
 
                         <div class="row">
                             <div class="col-12">
-                                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Manage Reimbursements</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">View Employees</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Change Username/Password</a>
-                                    </li>                                    
-                                </ul>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#basicInfo">Basic Info</a></li>
+  <li><a data-toggle="tab" href="#createReimbursement">Create A Reimbursement</a></li>
+  <li><a data-toggle="tab" href="#manageReimbursement">Manage Reimbursements</a></li>
+  <li><a data-toggle="tab" href="#viewReimbursement">View Past Reimbursements</a></li>
+  <li><a data-toggle="tab" href="#viewEmployees">View Employees</a></li>
+</ul>
+
+<div class="tab-content">
+                                    <div class="tab-pane fade" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                        <div class="row">
+                                        <br>
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Full Name</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <p id="firstlast"></p>
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Age</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <p id="age"></p>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        
+                                        
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Job Title</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <p id="title"></p>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Contact Number</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <p id="phonenumber"></p>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Address</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <p id="address"></p>
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                    </div>
+  									<div id="createReimbursement" class="tab-pane fade">
+    									<h3>Menu 1</h3>
+    									<p>Some content in menu 1.</p>
+  									</div>
+  									<div id="manageReimbursement" class="tab-pane fade">
+    								<h3>Menu 2</h3>
+    								<p>Some content in menu 2.</p>
+  									</div>
+    								<div id="viewReimbursement" class="tab-pane fade">
+    								<h3>Menu 2</h3>
+    								<p>Some content in menu 2.</p>
+  									</div>
+    								<div id="viewEmployees" class="tab-pane fade">
+    								<h3>Employees Managed By You:</h3>
+                                    <ul id="managedemployees">
+                                    </ul>
+  									</div>
+									</div>
                                 <div class="tab-content ml-1" id="myTabContent">
                                     <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
                                         <div class="row">
@@ -144,35 +209,7 @@
                                         <hr />
 
                                     </div>
-                                    <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
-                                    <div class="row">
-                                        <br>
-                                            <div class="col-sm-3 col-md-2 col-5">
-                                                <a href="#">Submit a Reimbursement Request</a>
-                                            </div>
-                                            <div class="col-md-8 col-6">
-                                                
-                                            </div>
-                                        </div>
-                                        <hr />
-                                        <div class="row">
-                                            <div class="col-sm-3 col-md-2 col-5">
-                                                <a href="#">Resolve Reimbursement Request</a>
-                                            </div>
-                                            <div class="col-md-8 col-6">
-                                                
-                                            </div>
-                                        </div>
-                                        <hr />
-                                        <div class="row">
-                                            <div class="col-sm-3 col-md-2 col-5">
-                                                <a href="#">View all Resolved Reimbursements</a>
-                                            </div>
-                                            <div class="col-md-8 col-6">
-                                                
-                                            </div>
-                                        </div>
-                                        <hr />
+                                    <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab" style="text-align:top">
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <a href="#">View Employees Managed by You</a>
@@ -181,14 +218,6 @@
                                                 <ul id="managedemployees">
                                                 </ul>
                                                 
-                                            </div>
-                                        </div>
-                                        <hr />
-                                        <div class="row">
-                                            <div class="col-sm-3 col-md-2 col-5">
-                                                <a href="#">Change Username/Password</a>
-                                            </div>
-                                            <div class="col-md-8 col-6">   
                                             </div>
                                         </div>
                                         <hr />
