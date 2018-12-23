@@ -81,6 +81,7 @@
   								<li class="active"><a data-toggle="tab" href="#basicInfo">Basic Info</a></li>
   								<li><a data-toggle="tab" href="#createReimbursement">Create A Reimbursement</a></li>
   								<li><a data-toggle="tab" href="#viewReimbursement">View Past Reimbursements</a></li>
+  								<li><a data-toggle="tab" href="#changeInfo">Change Info</a></li>
 							</ul>
                                 <div class="tab-content ml-1" id="myTabContent">
                                     <div class="tab-pane fade" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
@@ -173,6 +174,33 @@
                          				<td>Resolved By</td>
                          			</tr>
                                     </table>
+                                    </div>
+                             		</div>
+                             		<div class="tab-pane fade" id="changeInfo" role="tabpanel" aria-labelledby="ConnectedServices-tab">
+                                    <div class="reimbursementtab">
+                                    <br>
+                                    	<fieldset>
+                                        	<legend style="text-align:center">
+                                      		<strong>Edit Your Personal Information</strong>
+                                      		</legend>
+                                      		<form action="infoChange" method="POST" style="align:center" id="forminput">
+                                      		<p>First Name</p>
+                                      		<input name="firstnameinput" style="width:25%" required id="firstnameinput">
+                                      		<p>Last Name</p>
+                                      		<input name="lastnameinput" style="width:25%" required id="lastnameinput">
+                                      		<br>
+                                      		<p>Title<p>
+                                      		<input name="titleinput" style="width:25%" required id="titleinput">
+                                      		<p>Phone Number</p>
+                                      		<input name="phonenumberinput" style="width:25%" required id="phonenumberinput">
+                                      		<br>
+                                      		<p>Address</p>
+                                      		<input name="addressinput" style="width:70%" id="addressinput" required>
+                                      		<br>
+                                      		<br>
+                                      		<input type="submit" value="Submit" style="width:96%">
+                                      		</form>
+                                      		</fieldset>
                                     </div>
                              		</div>
                                 </div>

@@ -85,6 +85,7 @@
   <li><a data-toggle="tab" href="#viewReimbursement">Past Reimbursements</a></li>
   <li><a data-toggle="tab" href="#viewEmployees">Employees Managed By You</a></li>
   <li><a data-toggle="tab" href="#viewAllEmployees">All Employees</a></li>
+  <li><a data-toggle="tab" href="#changeInfo">Change Info</a></li>
 </ul>
 
 <div class="tab-content">
@@ -225,6 +226,30 @@
                          			</tr>
                                     </table>
                                     </div>
+                                    <div class="tab-pane fade" id="changeInfo" role="tabpanel" aria-labelledby="ConnectedServices-tab">
+                                    <div class="reimbursementtab">
+                                    <br>
+                                    	<fieldset>
+                                        	<legend style="text-align:center">
+                                      		<strong>Edit Your Personal Information</strong>
+                                      		</legend>
+                                      		<form action="infoChange" method="POST" style="align:center">
+                                      		<input name="firstnameinput" style="width:48%" required id="firstnameinput">
+                                      		<input name="lastnameinput" style="width:48%" required id="lastnameinput">
+                                      		<br>
+                                      		<br>
+                                      		<input name="titleinput" style="width:48%" required id="titleinput">
+                                      		<input name="phonenumberinput" style="width:48%" required id="phonenumberinput">
+                                      		<br>
+                                      		<br>
+                                      		<input name="addressinput" style="width:96%" id="addressinput" required>
+                                      		<br>
+                                      		<br>
+                                      		<input type="submit" value="Submit" style="width:96%">
+                                      		</form>
+                                      		</fieldset>
+                                    </div>
+                             		</div>
                                 </div>
                             </div>
                         </div>

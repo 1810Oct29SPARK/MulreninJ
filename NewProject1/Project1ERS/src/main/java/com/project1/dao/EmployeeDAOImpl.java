@@ -107,7 +107,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	public void updateEmployee(Employee e, int employeeId) {
 		try(Connection con = ConnectionUtil.getConnection(filename)){
 			String sql = "UPDATE EMPLOYEES " + 
-						"SET FIRST_NAME = ?, LAST_NAME = ?, JOB-TITLE = ?, PHONE_NUMBER = ?, AGE = ?, REPORTS_TO = ?, ADDRESS = ?, ZIPCODE = ?, IS_MANAGER = ? " + 
+						"SET FIRST_NAME = ?, LAST_NAME = ?, JOB_TITLE = ?, PHONE_NUMBER = ?, AGE = ?, REPORTS_TO = ?, ADDRESS = ?, ZIPCODE = ?, IS_MANAGER = ? " + 
 						"WHERE EMPLOYEE_ID = ?";
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, e.getFirstName());
@@ -119,6 +119,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 			pstmt.setString(7, e.getAddress());
 			pstmt.setInt(8, e.getZipCode());
 			pstmt.setBoolean(9, e.isManager());
+			pstmt.setInt(10, employeeId);
 			pstmt.executeUpdate();
 		} catch (SQLException e2) {
 			e2.printStackTrace();
