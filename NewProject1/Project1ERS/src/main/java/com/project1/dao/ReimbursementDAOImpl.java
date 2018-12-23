@@ -152,4 +152,54 @@ public class ReimbursementDAOImpl implements ReimbursementDAO{
 		}
 		return list;
 	}
+	
+	public List<Reimbursement> getAllResolvedReimbursements(){
+		List<Reimbursement> reimbursements = new ArrayList<Reimbursement>();
+		try(Connection con = ConnectionUtil.getConnection(filename)){
+			String sql = "SELECT REIMBURSEMENT_ID, EMPLOYEE_ID, REIMBURSE_NAME, REIMBURSE_AMOUNT, REIMBURSE_STATUS, RESOLVED_BY " + 
+						"FROM REIMBURSEMENTS WHERE REIMBURSE_STATUS = ?";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, "resolved");
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				int reimburseId = rs.getInt("REIMBURSEMENT_ID");
+				int employeeId = rs.getInt("EMPLOYEE_ID");
+				String reimburseName = rs.getString("REIMBURSE_NAME");
+				double amount = rs.getDouble("REIMBURSE_AMOUNT");
+				String status = rs.getString("REIMBURSE_STATUS");
+				int resolvedBy = rs.getInt("RESOLVED_BY");
+				reimbursements.add(new Reimbursement(reimburseId, employeeId, reimburseName,amount, status, resolvedBy));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	return reimbursements;
+	}
+	
+	public List<Reimbursement> getAllPendingReimbursements(){
+		List<Reimbursement> reimbursements = new ArrayList<Reimbursement>();
+		try(Connection con = ConnectionUtil.getConnection(filename)){
+			String sql = "SELECT REIMBURSEMENT_ID, EMPLOYEE_ID, REIMBURSE_NAME, REIMBURSE_AMOUNT, REIMBURSE_STATUS, RESOLVED_BY " + 
+						"FROM REIMBURSEMENTS WHERE REIMBURSE_STATUS = ?";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, "pending");
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				int reimburseId = rs.getInt("REIMBURSEMENT_ID");
+				int employeeId = rs.getInt("EMPLOYEE_ID");
+				String reimburseName = rs.getString("REIMBURSE_NAME");
+				double amount = rs.getDouble("REIMBURSE_AMOUNT");
+				String status = rs.getString("REIMBURSE_STATUS");
+				int resolvedBy = rs.getInt("RESOLVED_BY");
+				reimbursements.add(new Reimbursement(reimburseId, employeeId, reimburseName,amount, status, resolvedBy));
+			}
+		} catch (SQLException e2) {
+			e2.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	return reimbursements;
+	}
 }

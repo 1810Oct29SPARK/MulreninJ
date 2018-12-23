@@ -14,4 +14,6 @@ public interface ReimbursementDAO {
 	public void uploadImage(Reimbursement r, File photo);
 	public Reimbursement getReimbursementById(int id);
 	public List<Reimbursement> getReimbursementsByEmpId(Employee e);
+	public List<Reimbursement> getAllResolvedReimbursements();
+	public List<Reimbursement> getAllPendingReimbursements();
 }

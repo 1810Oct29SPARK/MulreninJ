@@ -18,6 +18,7 @@ import com.project1.dao.EmployeeDAO;
 import com.project1.dao.EmployeeDAOImpl;
 import com.project1.dao.ReimbursementDAO;
 import com.project1.dao.ReimbursementDAOImpl;
+import com.project1.util.ReimbursementUtil;
 
 @WebServlet("/session")
 public class SessionServlet extends HttpServlet {
@@ -46,12 +47,20 @@ public class SessionServlet extends HttpServlet {
 						zipcode, ismanager);
 				//make a call to a different endpoint to get managed employees by manager id.. do this elsewhere
 				EmployeeDAO dao = new EmployeeDAOImpl();
+				ReimbursementUtil util = new ReimbursementUtil();
 				ReimbursementDAO reimburse = new ReimbursementDAOImpl();
 				List<Employee> managedEmps = dao.getAllManagedEmployees(e);
 				List<Reimbursement> list = reimburse.getReimbursementsByEmpId(e);
-				//String output = e + " " + managedEmps;
+				List<Reimbursement> allReimbursements = reimburse.getAllResolvedReimbursements();
+				List<Employee> approvedManagers = util.showManagersWhoResolved(allReimbursements);
+				List<Employee> allEmps = dao.getAllEmployees();
+				List<Employee> allManagers = util.showManagers(allEmps);
+				List<Reimbursement> pendingList = util.getAllPendingReimbursements(managedEmps);
+				List<Employee> pendingEmployees = util.getAllEmployeesFromPendingReimbursements(pendingList);
 				response.getWriter().write("{\"User\": " + om.writeValueAsString(e) + ", \"Employees\": " + om.writeValueAsString(managedEmps) + ", \"Reimbursements\": "
-				+ om.writeValueAsString(list) + "}");
+				+ om.writeValueAsString(list) + ", \"AllReimbursements\": " + om.writeValueAsString(allReimbursements) + ", \"AllReimbursementManagers\": " + om.writeValueAsString(approvedManagers) + 
+				", \"AllEmployees\": " + om.writeValueAsString(allEmps) + ", \"AllManagers\": " + om.writeValueAsString(allManagers) + 
+				", \"PendingReimbursements\": " + om.writeValueAsString(pendingList) + ", \"PendingEmployees\": " + om.writeValueAsString(pendingEmployees) + "}");
 			} catch (Exception e) {
 				response.getWriter().write("{\"session\":null}");
 			}

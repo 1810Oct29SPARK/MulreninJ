@@ -30,6 +30,11 @@ public class Driver {
 		AuthenticationService auth = new AuthenticationService();
 		Integer i = null;
 		ReimbursementUtil r = new ReimbursementUtil();
+		List<Reimbursement> allReimbursements = reimburse.getAllReimbursements();
+		List<Employee> approvedManagers = r.showManagersWhoResolved(allReimbursements);
+		for(Employee employee:approvedManagers) {
+			System.out.println(employee);
+		}
 		//List<Employee> allEmps = e.getAllManagedEmployees(auth.isValidUser("ICREATEDMICROSOFT", "PASSWORD"));
 		/*for(LoginInfo l:log) {
 			System.out.println(l);

@@ -5,10 +5,12 @@ import java.util.List;
 
 import com.project1.beans.Employee;
 import com.project1.beans.LoginInfo;
+import com.project1.beans.Reimbursement;
 import com.project1.dao.EmployeeDAO;
 import com.project1.dao.EmployeeDAOImpl;
 import com.project1.dao.LoginInfoDAO;
 import com.project1.dao.LoginInfoDAOImpl;
+import com.project1.dao.ReimbursementDAO;
 import com.project1.dao.ReimbursementDAOImpl;
 
 public class ReimbursementUtil {
@@ -62,5 +64,48 @@ public class ReimbursementUtil {
 			}
 		}
 		return false;
+	}
+	
+	public List<Employee> showManagersWhoResolved(List<Reimbursement> list){
+		List<Employee> empList = new ArrayList<Employee>();
+		EmployeeDAO e = new EmployeeDAOImpl();
+		for(Reimbursement r:list) {
+			if(r.getResolvedBy() != 0) {
+				empList.add(e.getEmployeeById(r.getResolvedBy()));
+			}
+		}
+		return empList;
+	}
+	
+	public List<Employee> showManagers(List<Employee> list){
+		List<Employee> empList = new ArrayList<Employee>();
+		EmployeeDAO e = new EmployeeDAOImpl();
+		for(Employee emp:list) {
+				empList.add(e.getEmployeeById(emp.getReportsTo()));
+		}
+		return empList;
+	}
+	
+	public List<Reimbursement> getAllPendingReimbursements(List<Employee> list){
+		List<Reimbursement> reimbursements = new ArrayList<Reimbursement>();
+		ReimbursementDAO r = new ReimbursementDAOImpl();
+		for(Employee e:list) {
+			List<Reimbursement> empsReimbursements = r.getAllPendingReimbursements();
+			for(Reimbursement reimburse:empsReimbursements) {
+				if(e.getId() == reimburse.getEmployeeId()) {
+					reimbursements.add(reimburse);
+				}
+			}
+		}
+		return reimbursements;
+	}
+	
+	public List<Employee> getAllEmployeesFromPendingReimbursements(List<Reimbursement> list){
+		List<Employee> e = new ArrayList<Employee>();
+		EmployeeDAO emp = new EmployeeDAOImpl();
+		for(Reimbursement r:list) {
+			e.add(emp.getEmployeeById(r.getEmployeeId()));
+		}
+		return e;
 	}
 }
