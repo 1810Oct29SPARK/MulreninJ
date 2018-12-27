@@ -30,6 +30,10 @@ public class InfoChangeServlet extends HttpServlet{
 		employee = e.getEmployeeById(id);
 		Employee changedEmployee = new Employee(employee.getId(), req.getParameter("firstnameinput"), req.getParameter("lastnameinput"), req.getParameter("titleinput"), req.getParameter("phonenumberinput"),employee.getAge(),employee.getReportsTo(), req.getParameter("addressinput"),employee.getZipCode(), employee.isManager());
 		e.updateEmployee(changedEmployee, employee.getId());
+		if(changedEmployee.isManager()) {
+			resp.sendRedirect("ManagerPage.html");
+		}else {
 		resp.sendRedirect("EmployeePage.html");
+		}
 	}
 }

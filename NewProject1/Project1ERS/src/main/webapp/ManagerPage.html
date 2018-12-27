@@ -66,7 +66,7 @@
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">
                                 <div class="userData ml-3">
-                                	<h1>Welcome and Congratulations, You're a Manager</h1>
+                                	<h1>Welcome, You're a Manager</h1>
                                     <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);" id="firstlasttop"></a></h2>
                                 </div>
                                 <div class="ml-auto">
@@ -233,16 +233,19 @@
                                         	<legend style="text-align:center">
                                       		<strong>Edit Your Personal Information</strong>
                                       		</legend>
-                                      		<form action="infoChange" method="POST" style="align:center">
-                                      		<input name="firstnameinput" style="width:48%" required id="firstnameinput">
-                                      		<input name="lastnameinput" style="width:48%" required id="lastnameinput">
+                                      		<form action="infoChange" method="POST" style="align:center" id="forminput">
+                                      		<p>First Name</p>
+                                      		<input name="firstnameinput" style="width:25%" required id="firstnameinput">
+                                      		<p>Last Name</p>
+                                      		<input name="lastnameinput" style="width:25%" required id="lastnameinput">
                                       		<br>
+                                      		<p>Title<p>
+                                      		<input name="titleinput" style="width:25%" required id="titleinput">
+                                      		<p>Phone Number</p>
+                                      		<input name="phonenumberinput" style="width:25%" required id="phonenumberinput">
                                       		<br>
-                                      		<input name="titleinput" style="width:48%" required id="titleinput">
-                                      		<input name="phonenumberinput" style="width:48%" required id="phonenumberinput">
-                                      		<br>
-                                      		<br>
-                                      		<input name="addressinput" style="width:96%" id="addressinput" required>
+                                      		<p>Address</p>
+                                      		<input name="addressinput" style="width:70%" id="addressinput" required>
                                       		<br>
                                       		<br>
                                       		<input type="submit" value="Submit" style="width:96%">

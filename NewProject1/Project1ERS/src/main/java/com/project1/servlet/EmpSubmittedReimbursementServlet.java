@@ -1,5 +1,6 @@
 package com.project1.servlet;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -33,6 +34,8 @@ public class EmpSubmittedReimbursementServlet extends HttpServlet {
 		ReimbursementDAO reimburse = new ReimbursementDAOImpl();
 		int id = e.getEmployeeIdFromFirstAndLastName(req.getParameter("firstnameinput"), req.getParameter("lastnameinput"));
 		Reimbursement r = new Reimbursement(1,id, req.getParameter("description"), Double.parseDouble(req.getParameter("amount")),"pending",0);
+		File blobfile = new File(req.getParameter("blobfile"));
+		reimburse.uploadImage(r, blobfile);
 		reimburse.addReimbursement(r);
 		resp.sendRedirect("employee_profile");
 	}

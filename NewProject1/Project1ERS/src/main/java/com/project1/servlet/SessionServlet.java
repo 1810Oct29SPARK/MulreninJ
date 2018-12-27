@@ -57,10 +57,13 @@ public class SessionServlet extends HttpServlet {
 				List<Employee> allManagers = util.showManagers(allEmps);
 				List<Reimbursement> pendingList = util.getAllPendingReimbursements(managedEmps);
 				List<Employee> pendingEmployees = util.getAllEmployeesFromPendingReimbursements(pendingList);
-				response.getWriter().write("{\"User\": " + om.writeValueAsString(e) + ", \"Employees\": " + om.writeValueAsString(managedEmps) + ", \"Reimbursements\": "
-				+ om.writeValueAsString(list) + ", \"AllReimbursements\": " + om.writeValueAsString(allReimbursements) + ", \"AllReimbursementManagers\": " + om.writeValueAsString(approvedManagers) + 
+				response.getWriter().write("{\"User\": " + om.writeValueAsString(e) + ", \"Employees\": " + 
+				om.writeValueAsString(managedEmps) + ", \"Reimbursements\": "
+				+ om.writeValueAsString(list) + ", \"AllReimbursements\": " + om.writeValueAsString(allReimbursements) + 
+				", \"AllReimbursementManagers\": " + om.writeValueAsString(approvedManagers) + 
 				", \"AllEmployees\": " + om.writeValueAsString(allEmps) + ", \"AllManagers\": " + om.writeValueAsString(allManagers) + 
-				", \"PendingReimbursements\": " + om.writeValueAsString(pendingList) + ", \"PendingEmployees\": " + om.writeValueAsString(pendingEmployees) + "}");
+				", \"PendingReimbursements\": " + om.writeValueAsString(pendingList) + ", \"PendingEmployees\": "
+				+ om.writeValueAsString(pendingEmployees) + "}");
 			} catch (Exception e) {
 				response.getWriter().write("{\"session\":null}");
 			}
